@@ -1,0 +1,58 @@
+- Criteria : It is the iteration termination criteria. When this criteria is satisfied, algorithm iteration stops.
+
+    Actually, it should be a tuple of 3 parameters.  
+    They are ( type, max_iter, epsilon ) :
+    
+    1. type of termination criteria (It has 3 flags as below) :  
+    cv2.TERM_CRITERIA_EPS - stop the algorithm iteration if specified accuracy, epsilon, is reached.
+    cv2.TERM_CRITERIA_MAX_ITER - stop the algorithm after the specified number of iterations,
+    max_iter. cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER - stop the iteration when any of the above condition is met.
+    
+    2. max_iter - An integer specifying maximum number of iterations.
+    
+    3. epsilon - Required accuracy  
+
+- My criteria is such that, whenever 30 iterations 
+    of algorithm is ran, or an accuracy of epsilon = 0.001 is reached,
+    stop the algorithm and return the answer.
+    
+- The Output of print(np.mgrid[0:chessboardSize[0], 0:chessboardSize[1]]) is :
+    
+[[[0 0 0 0 0 0 0]
+  [1 1 1 1 1 1 1]
+  [2 2 2 2 2 2 2]
+  [3 3 3 3 3 3 3]
+  [4 4 4 4 4 4 4]
+  [5 5 5 5 5 5 5]
+  [6 6 6 6 6 6 6]]
+
+ [[0 1 2 3 4 5 6]
+  [0 1 2 3 4 5 6]
+  [0 1 2 3 4 5 6]
+  [0 1 2 3 4 5 6]
+  [0 1 2 3 4 5 6]
+  [0 1 2 3 4 5 6]
+  [0 1 2 3 4 5 6]]]
+  
+- The Output of print(np.mgrid[0:chessboardSize[0], 0:chessboardSize[1]].T.reshape(-1, 2)) is :
+
+[[0 0]
+ [1 0]
+ [2 0]
+ [3 0]
+ [4 0]
+ [5 0]
+ [6 0]
+ [0 1]
+ [1 1]
+ .
+ .
+ .]
+ 
+- The function imread loads an image from the specified file and returns it. If the image cannot be read (because of missing file, improper   permissions, unsupported or invalid format), the function returns an empty matrix ( Mat::data==NULL ).
+
+- https://docs.opencv.org/4.x/dd/d1a/group__imgproc__feature.html#ga354e0d7c86d0d9da75de9b9701a9a87e
+
+- http://amroamroamro.github.io/mexopencv/matlab/cv.calibrateCamera.html
+
+- https://stackoverflow.com/questions/30331944/finding-red-color-in-image-using-python-opencv
